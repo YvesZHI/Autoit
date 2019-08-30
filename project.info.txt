@@ -1,6 +1,6 @@
 [username]
 [remote server IP]
-[password 如果Windows系统的特殊字符，如#，请在这里用大括号括起来，如{#}]
+[password]
 [要执行的命令，如，cd ~/code; make clean; make -j8;]
 [上一句命令需要执行的最小时间，秒为单位，如100表示上一句命令要执行100秒]
 [包含绝对路径的目标文件，如，/home/username/a.log]
