@@ -4,7 +4,6 @@
 RemoteControlAndGetFile()
 
 Func RemoteControlAndGetFile()
-
 ;   If NOT WinExists ("DarkWars", "") Then
 ;	  MsgBox(0, "ERROR", "Window doesn't exist")
 	  ;Return
@@ -35,7 +34,6 @@ Func RemoteControlAndGetFile()
    ; IP
    ; password
    ; execute [this_cmd]
-   ; execution time of [this_cmd]
    ; target_file
    ; cp [target_file] to [this_win_path]
    Local $info[_FileCountLines($file3)]
@@ -43,11 +41,13 @@ Func RemoteControlAndGetFile()
 	  $info[$i - 1] = FileReadLine($file3, $i)
    Next
    FileClose($file3)
-   $info[2] = StringRegExpReplace($info[2], '(\#)', "{#}") ; special character must be surrounded by {}
+   $info[2] = StringRegExpReplace($info[2], '(\#)', "{#}")
    ;MsgBox(0, "ERROR", $info[2])
 
    Run('cmd.exe')
-   WinWaitActive('管理员: C:\Windows\system32\cmd.exe')
-   Send("{LSHIFT}" & "{ENTER}" & @WindowsDir & $partOfPath & "\plink.exe -pw " & $info[2] & " " & $info[0] & "@" & $info[1] & " " & $info[3] & " & timeout " & $info[4] & " & " & @WindowsDir & $partOfPath & "\pscp.exe -pw " & $info[2] & " " & $info[0] & "@" & $info[1] & ":" & $info[5] & " " & $info[6] & "{ENTER}" & "{ENTER}")
+   $hWnd = WinWaitActive('管理员: C:\Windows\system32\cmd.exe')
+   ControlSend($hWnd, "", "", "{LSHIFT}" & "{ENTER}" & @WindowsDir & $partOfPath & "\plink.exe -pw " & $info[2] & " " & $info[0] & "@" & $info[1] & " " & $info[3] & " & " & @WindowsDir & $partOfPath & "\pscp.exe -pw " & $info[2] & " " & $info[0] & "@" & $info[1] & ":" & $info[4] & " " & $info[5] & "{ENTER}" & "{ENTER}")
+;   Send("{LSHIFT}" & "{ENTER}" & @WindowsDir & $partOfPath & "\plink.exe -pw " & $info[2] & " " & $info[0] & "@" & $info[1] & " " & $info[3] & " & " & @WindowsDir & $partOfPath & "\pscp.exe -pw " & $info[2] & " " & $info[0] & "@" & $info[1] & ":" & $info[4] & " " & $info[5] & "{ENTER}" & "{ENTER}")
+
 
 EndFunc
