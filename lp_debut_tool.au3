@@ -1,9 +1,9 @@
 #include <MsgBoxConstants.au3>
 #include <File.au3>
 
-Test()
+RemoteControlAndGetFile()
 
-Func Test()
+Func RemoteControlAndGetFile()
 
 ;   If NOT WinExists ("DarkWars", "") Then
 ;	  MsgBox(0, "ERROR", "Window doesn't exist")
@@ -49,6 +49,5 @@ Func Test()
    Run('cmd.exe')
    WinWaitActive('管理员: C:\Windows\system32\cmd.exe')
    Send("{LSHIFT}" & "{ENTER}" & @WindowsDir & $partOfPath & "\plink.exe -pw " & $info[2] & " " & $info[0] & "@" & $info[1] & " " & $info[3] & " & timeout " & $info[4] & " & " & @WindowsDir & $partOfPath & "\pscp.exe -pw " & $info[2] & " " & $info[0] & "@" & $info[1] & ":" & $info[5] & " " & $info[6] & "{ENTER}" & "{ENTER}")
-
 
 EndFunc
