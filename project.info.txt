@@ -1,0 +1,7 @@
+[username]
+[remote server IP]
+[password 如果Windows系统的特殊字符，如#，请在这里用大括号括起来，如{#}]
+[要执行的命令，如，cd ~/code ; make clean;  make product=mini lperika -j8;]
+[上一句命令需要执行的最小时间，秒为单位，如100表示上一句命令要执行100秒]
+[包含绝对路径的目标文件，如，/home/l00500963/code/out/mini/device/lperika.bin]
+[上一句中的目标文件所要拷贝到的Windows系统上的目标路径，如，%USERPROFILE%\Desktop\]
