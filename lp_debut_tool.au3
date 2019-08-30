@@ -43,7 +43,7 @@ Func Test()
 	  $info[$i - 1] = FileReadLine($file3, $i)
    Next
    FileClose($file3)
-   $info[2] = StringRegExpReplace($info[2], '(\#)', "{#}")
+   $info[2] = StringRegExpReplace($info[2], '(\#)', "{#}") ; special character must be surrounded by {}
    ;MsgBox(0, "ERROR", $info[2])
 
    Run('cmd.exe')
