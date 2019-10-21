@@ -24,6 +24,6 @@ if %ERRORLEVEL% == 0 (
         call pscp %%argument2%%
         )
 
-    ::for /L %%i in (1,1,%n%) do call echo %%array[%%i]%%
+::for /L %%i in (1,1,%n%) do call echo %%array[%%i]%%
 
-    pause
+pause
