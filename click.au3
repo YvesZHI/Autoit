@@ -1,4 +1,3 @@
-```
 #include <AutoItConstants.au3>
 #include <MsgBoxConstants.au3>
 
@@ -32,4 +31,4 @@ name=$(echo "welog-groupmic-205-a-eu-848cdf5567-ftzkj" | awk -F- '{NF-=4;print $
 
 
 #comments-end
-```
+
